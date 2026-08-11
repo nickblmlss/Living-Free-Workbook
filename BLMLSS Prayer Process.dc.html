@@ -132,7 +132,7 @@
             <sc-if value="{{ s2Locked }}"><span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:rgba(30,27,22,.08);padding:5px 12px;border-radius:999px">Locked</span></sc-if>
             <sc-if value="{{ s2Done }}"><span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;background:#D0EAE6;padding:5px 12px;border-radius:999px">Complete</span></sc-if>
           </div>
-          <h3 style="font-family:var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:34px;line-height:1.18;margin:0 0 16px">Pre-work Completion</h3><div style="display:flex;flex-direction:column;gap:20px">
+          <h3 style="font-family:var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:34px;line-height:1.18;margin:0 0 16px">Pre-work Completion</h3><sc-if value="{{ s2Open }}"><div style="display:flex;flex-direction:column;gap:20px">
 
               <div style="border:1px solid rgba(30,27,22,.15);border-radius:6px;padding:28px;background:#F7F3ED">
                 <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45);margin-bottom:12px">Assignment one</div>
@@ -200,12 +200,9 @@
               </div>
 
               <p style="font-size: 17px; line-height: 1.65; max-width: 64ch; margin: 8px 0 0; color: rgba(30,27,22,.7); width: 677px; height: 152px"><i style="position: relative">* The Intake Form helps us prepare for your Renouncing Prayer, and the E-course will help establish an understanding helpful to walk in freedom and live out your deliverance after the prayer sessions. A completed Intake Form and E-course quiz are required before moving forward and scheduling both your Renouncing and Releasing Prayers.</i></p><p></p>
-            </div>
+            </div></sc-if>
           <sc-if value="{{ s2Locked }}">
             <p style="font-size:17px;line-height:1.65;max-width:60ch;margin:0;color:rgba(30,27,22,.7)">Opens once you have watched the intro video.</p>
-          </sc-if>
-          <sc-if value="{{ s2Open }}">
-            
           </sc-if>
         </div>
       </article>
