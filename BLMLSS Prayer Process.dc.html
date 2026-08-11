@@ -41,13 +41,13 @@
           <img src="assets/logo-blmlss-ink.png" alt="BLMLSS" style="height:26px;width:auto;display:block">
         </a>
         <nav style="display:flex;align-items:center;gap:20px">
-          <a href="{{ homeHref }}" onClick="{{ goHome }}" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1E1B16;text-decoration:none;border-bottom:1px solid #1E1B16;padding-bottom:3px">Prayer Process</a>
+          <a href="{{ homeHref }}" onClick="{{ goHome }}" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#1E1B16;text-decoration:none;padding-bottom:3px">Prayer Process</a>
           <span style="color:rgba(30,27,22,.25)">|</span>
           <sc-if value="{{ s5Open }}">
             <a href="{{ livingFreeUrl }}" target="_blank" rel="noopener" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px">Living Free</a>
           </sc-if>
           <sc-if value="{{ s5Locked }}" hint-placeholder-val="{{ true }}">
-            <span title="Unlocks at step 5" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.25);padding-bottom:3px;cursor:default">Living Free</span>
+            <a href="{{ livingFreeUrl }}" target="_blank" rel="noopener" title="Unlocks at step 5" style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.25);text-decoration:none;border-bottom:1px solid transparent;padding-bottom:3px" style-hover="color:rgba(30,27,22,.45)">Living Free (Unlocked when prayer process is complete)</a>
           </sc-if>
         </nav>
       </div>
@@ -57,9 +57,7 @@
           <div style="height:3px;background:#1E1B16;width:{{ progressPct }}"></div>
         </div>
       </div>
-    </div><header style="position:sticky;top:0;z-index:50;background:#F7F3ED;border-bottom:1px solid rgba(30,27,22,.15)">
-    
-  </header>
+    </div>
 
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
   <main>
@@ -69,17 +67,17 @@
     <div style="max-width: 1240px; margin: 0 auto; padding: 96px 32px 96px; display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: end; position: relative">
         <div>
           <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.55);margin-bottom:28px">BLAMELESS PRAYER</div>
-          <h1 style="font-family: Restora; font-weight: 500; font-size: clamp(55px,5.6vw,78px); line-height: 1.12; letter-spacing: -.01em; margin: 0; text-wrap: pretty; font-style: normal; width: 458px; height: 204px">Welcome to the BLMLSS Prayer Process</h1>
-          <p style="font-size: 17px; line-height: 1.65; max-width: 56ch; margin: 32px 0 0; color: rgba(30,27,22,.7); width: 474px; height: 54px">Each of the steps below will unlock as you go—we hope this experience blesses you and brings you closer to The Lord.</p>
+          <h1 style="font-family: Restora; font-weight: 500; font-size: clamp(65px,5.6vw,78px); line-height: 1.12; letter-spacing: -.01em; margin: 0; text-wrap: pretty; font-style: normal; max-width: 12ch">Welcome to the BLMLSS Prayer Process</h1><p style="font-size: 17px; line-height: 1.65; max-width: 46ch; margin: 32px 0 0; color: rgba(30,27,22,.7)">Each of the steps below will unlock as you go—we hope this experience blesses you and brings you closer to The Lord.</p>
+          
         </div>
-        <img src="assets/prayer-hands.jpg" alt="" style="width:100%;height:380px;object-fit:cover;display:block">
+        <img src="assets/prayer-hands.jpg" alt="" style="width: 100%; height: 380px; object-fit: cover; display: block; border-radius: 24px">
       </div></section>
 
     
 
     <section style="max-width:1240px;margin:0 auto;padding:96px 32px 0">
       <div style="display:flex;flex-direction:column;align-items:flex-start;gap:36px">
-        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45)">A WORD FROM OUR FOUNDER</div><p style="font-family:Restora,var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:clamp(28px,3.2vw,44px);line-height:1.26;letter-spacing:-.01em;margin:0;max-width:40ch;text-wrap:pretty">"After over 3 years of watching the Lord move in people's lives, we are expectant that He will do the same for you—miracles, deliverance, and healing. We're here as an encouragement to you, and to help you get ready for the wedding feast to come.&nbsp;</p>
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45)">A WORD FROM OUR FOUNDER</div><div style="font-family:Restora,var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:clamp(28px,3.2vw,44px);line-height:1.26;letter-spacing:-.01em;margin:0;max-width:40ch;text-wrap:pretty"><div>"Over the last three years, we've had the joy and honor of being taught by the Holy Spirit how to set the captives free. We've watched the Lord move in every single prayer — miracles, deliverance, and healing, just as we read in Scripture — and we are expectant that He will do the same for you.</div><div><br></div><div>As we follow the Lord's call, we invite you to join us. Together, as the Bride of Christ, we are preparing for the wedding feast to come — walking blameless before the Lord."</div></div>
         <p style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.55);margin:0">— Nick Gravino</p>
       </div>
       <hr style="border:0;border-top:1px solid rgba(30,27,22,.15);margin:88px 0 0">
@@ -121,7 +119,7 @@
             <sc-if value="{{ s1Open }}">
               <x-import component-from-global-scope="BlamelessMinistriesDesignSystem_0fb65e.Button" onClick="{{ markIntro }}" hint-size="auto,48px">I’ve watched the intro video</x-import>
             </sc-if>
-            <a href="mailto:prayer@blmlss.com?subject=Question%20about%20my%20BLMLSS%20Prayer%20Process">Have any questions? please reach out here!</a>
+            <a href="mailto:prayer@blmlss.com?subject=Question%20about%20my%20BLMLSS%20Prayer%20Process">Have any questions? Please reach out here!</a>
           </div>
         </div>
       </article>
@@ -138,7 +136,7 @@
 
               <div style="border:1px solid rgba(30,27,22,.15);border-radius:6px;padding:28px;background:#F7F3ED">
                 <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45);margin-bottom:12px">Assignment one</div>
-                <p style="font-size:17px;line-height:1.65;max-width:60ch;margin:0 0 20px"><strong>Fill out the “BLAMELESS Consent &amp; Intake Form”</strong> and email either a signed digital or physical copy to me.</p>
+                <p style="font-size:17px;line-height:1.65;max-width:60ch;margin:0 0 20px"><strong>Fill out the “BLAMELESS Consent &amp; Intake Form”</strong> and email either a signed digital or physical copy to your prayer lead. Each prayer lead email address is in the drop down in the black box. Look for the name of your prayer lead to get their email address.</p>
                 <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center">
                   <x-import component-from-global-scope="BlamelessMinistriesDesignSystem_0fb65e.Button" as="a" href="{{ intakeFormUrl }}" target="_blank" rel="noopener" size="sm" hint-size="auto,40px">Click here for the BLMLSS consent and intake form</x-import>
                   <div style="display:flex;align-items:stretch;border:1px solid #1E1B16;border-radius:4px;overflow:hidden">
@@ -283,23 +281,19 @@
       </article>
     </section><section style="background:#C8B8E4;margin-top:112px;padding:clamp(48px,7vw,96px) 32px">
       <figure style="max-width:1240px;margin:0 auto;text-align:center">
-        <blockquote style="margin: 0 auto; font-family: var(--font-display),'Prata',Georgia,serif; font-weight: 400; font-size: clamp(24px,2.6vw,34px); line-height: 1.34; letter-spacing: -.01em; max-width: 34ch; text-wrap: pretty; width: 843px; height: 367px">“You are my friends if you do what I command you. No longer do I call you servants, for the servant does not know what his master is doing; but I have called you friends, for all that I have heard from my Father I have made known to you. You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you. These things I command you, so that you will love one another.”</blockquote>
+        <blockquote style="margin: 0 auto; font-family: var(--font-display),'Prata',Georgia,serif; font-weight: 400; font-size: clamp(24px,2.6vw,34px); line-height: 1.34; letter-spacing: -.01em; max-width: 34ch; text-wrap: pretty; width: 843px">“You are my friends if you do what I command you. No longer do I call you servants, for the servant does not know what his master is doing; but I have called you friends, for all that I have heard from my Father I have made known to you. You did not choose me, but I chose you and appointed you that you should go and bear fruit and that your fruit should abide, so that whatever you ask the Father in my name, he may give it to you. These things I command you, so that you will love one another.”</blockquote>
         <figcaption style="margin-top:32px;font-size:11px;letter-spacing:.18em;text-transform:uppercase">John 15:14—17</figcaption>
       </figure>
     </section>
 
     
 
-    <section style="max-width:1240px;margin:0 auto;padding:96px 32px">
-      <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:56px;align-items:start">
-        <div>
-          <h2 style="font-family:var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:32px;line-height:1.2;margin:0 0 24px">Supporting the ministry</h2>
-          <p style="font-size:17px;line-height:1.65;margin:0 0 32px">BLMLSS is a nonprofit ministry that operates entirely through donations. The prayer process is offered freely, but if you feel led to support your prayer process and the ministry team serving you, you are welcome to make a one-time donation.</p>
-          
-        </div>
+    <section style="max-width:1240px;margin:0 auto;padding:96px 64px 96px 32px">
+      <div style="display:grid;grid-template-columns:minmax(0,1fr) 1px minmax(0,1fr);gap:56px;align-items:start">
+        <dc-import name="Supporting the Ministry" hint-size="100%,240px"></dc-import>
         <div style="background:rgba(30,27,22,.15);align-self:stretch"></div>
         <dc-import name="Reset Progress" description="Resetting clears every step you have marked complete, your workbook progress and all your quiz answers on this device." on-confirm="{{ resetAll }}" hint-size="100%,240px"></dc-import>
-      </div><div style="max-width: 400px; width: 196px; height: 46px"><a href="#XUDNCNYQ" style="display: none"></a></div>
+      </div>
     </section>
       </div>
       <sc-if value="{{ locked }}">

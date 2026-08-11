@@ -26,7 +26,7 @@
   <h3 style="font-family:var(--font-display),'Prata',Georgia,serif;font-weight:400;font-size:26px;line-height:1.22;margin:0 0 14px">{{ heading }}</h3><p style="font-size:17px;line-height:1.65;margin:0 0 20px;color:rgba(30,27,22,.7)">{{ description }}</p>
 
   <sc-if value="{{ isClosed }}" hint-placeholder-val="{{ true }}">
-    <button type="button" onClick="{{ open }}" style="appearance:none;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px 18px;border:1px solid rgba(30,27,22,.15);border-radius:4px;background:transparent;color:#1E1B16;white-space:nowrap" style-hover="background:#EEE6DB">{{ buttonLabel }}</button>
+    <button type="button" onClick="{{ open }}" style="appearance:none;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px 18px;border:1px solid rgba(30,27,22,.15);border-radius:4px;background:transparent;color:#1E1B16;white-space:normal;max-width:100%;text-align:left" style-hover="background:#EEE6DB">{{ buttonLabel }}</button>
   </sc-if>
 
   <sc-if value="{{ isOpen }}">
