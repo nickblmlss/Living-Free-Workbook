@@ -30,6 +30,34 @@
     :focus-visible{outline:2px solid var(--light-violet);outline-offset:3px;}
     textarea{font-family:var(--font-body);}
     @media print{[data-noprint]{display:none !important;} html,body{background:#fff;}}
+  
+    /* --- responsive / mobile --- */
+    html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+    body{overflow-x:hidden;-webkit-overflow-scrolling:touch;}
+    img,iframe,video,select,textarea,input{max-width:100%;}
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+    @media (max-width:900px){
+      [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important;}
+      section{padding-left:20px!important;padding-right:20px!important;}
+      main[style*="padding"]{padding-left:20px!important;padding-right:20px!important;}
+      main p,main blockquote,main h1,main h2,main h3,main figure,footer p,footer div{max-width:100%!important;}
+      main p,main blockquote,footer p{width:auto!important;height:auto!important;}
+      article[style*="padding: 40px"],article[style*="padding:40px"]{padding:24px!important;gap:24px!important;}
+      article img[alt^="Step"],article img[alt^="step"]{width:96px!important;height:96px!important;}
+      div[style*="padding: 28px"],div[style*="padding:28px"]{padding:20px!important;}
+      img[style*="height: 380px"],img[style*="height:380px"]{height:220px!important;}
+      div[style*="align-self: stretch"],div[style*="align-self:stretch"]{min-height:1px;}
+      h3{font-size:26px!important;}
+      button,select{min-height:44px;}
+      [data-r="bar"]{padding:12px 20px!important;gap:12px!important;flex-wrap:wrap!important;}
+      [data-r="bar"] nav{flex-wrap:wrap!important;gap:14px!important;}
+      [data-r="bar"] > div{min-width:0!important;}
+    }
+    @media (max-width:600px){
+      section{padding-left:16px!important;padding-right:16px!important;}
+      main[style*="padding"]{padding-left:16px!important;padding-right:16px!important;}
+      article[style*="padding: 40px"],article[style*="padding:40px"]{padding:20px!important;}
+    }
   </style>
 </helmet>
 <sc-if value="{{ lfLocked }}">
@@ -50,7 +78,7 @@
 <div style="min-height: 100vh; background: var(--cream); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.65;">
 
   <header data-noprint="true" style="position: sticky; top: 0; z-index: 20; background: var(--cream); border-bottom: 1px solid var(--ink-15);">
-    <div style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+    <div data-r="bar" style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
       <div style="display: flex; align-items: center; gap: 28px; min-width: 0;">
         <button onClick="{{ goHome }}" style="appearance: none; border: 0; background: none; padding: 0; cursor: pointer; display: block; flex: none;">
           <img src="assets/logo-blmlss-ink.png" alt="BLMLSS" style="height: 26px; width: auto; display: block;">

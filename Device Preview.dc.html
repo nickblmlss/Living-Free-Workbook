@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/tokens/base.css">
+  <style>body{margin:0;background:#EEE6DB;}</style>
+</helmet>
+
+<div style="min-height:100vh;background:#EEE6DB;color:#1E1B16;font-family:var(--font-body),'Source Sans 3',system-ui,sans-serif;padding:28px">
+  <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;margin-bottom:24px">
+    <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45)">Device preview</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <sc-for list="{{ pages }}" as="p" hint-placeholder-count="2">
+        <button type="button" onClick="{{ p.onClick }}" style="{{ p.style }}">{{ p.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:28px;align-items:flex-start;overflow-x:auto;padding-bottom:16px">
+    <sc-for list="{{ frames }}" as="f" hint-placeholder-count="3">
+      <div style="flex:none">
+        <div style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(30,27,22,.45);margin-bottom:10px">{{ f.label }}</div>
+        <iframe src="{{ f.src }}" title="{{ f.label }}" style="width:{{ f.w }};height:{{ f.h }};border:1px solid rgba(30,27,22,.25);border-radius:6px;background:#F7F3ED;display:block"></iframe>
+      </div>
+    </sc-for>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const PAGES = [
+  {label:'Prayer Process', src:'BLMLSS%20Prayer%20Process.dc.html'},
+  {label:'Living Free', src:'Living%20Free%20Workbook.dc.html'}
+];
+const SIZES = [
+  {label:'iPhone 14 · 390×844', w:'390px', h:'844px'},
+  {label:'iPhone Pro Max · 430×932', w:'430px', h:'932px'},
+  {label:'iPad · 820×1180', w:'820px', h:'1180px'},
+  {label:'Desktop · 1280×860', w:'1280px', h:'860px'}
+];
+
+class Component extends DCLogic {
+  state = {i:0};
+  renderVals(){
+    const src = PAGES[this.state.i].src;
+    return {
+      pages: PAGES.map((p,i) => ({
+        label: p.label,
+        onClick: () => this.setState({i}),
+        style: 'appearance:none;cursor:pointer;font:inherit;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px 18px;border-radius:4px;border:1px solid #1E1B16;'
+          + (i === this.state.i ? 'background:#1E1B16;color:#F7F3ED;' : 'background:transparent;color:#1E1B16;')
+      })),
+      frames: SIZES.map(s => Object.assign({src}, s))
+    };
+  }
+}
+
+</script>
+</body>
+</html>

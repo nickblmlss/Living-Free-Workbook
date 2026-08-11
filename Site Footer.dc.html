@@ -21,6 +21,14 @@
     body{margin:0;}
     .blmlss-foot a{color:rgba(247,243,237,.72);text-decoration:none;transition:color 160ms;}
     .blmlss-foot a:hover{color:#F7F3ED;}
+  
+    html{-webkit-text-size-adjust:100%;}
+    @media (max-width:900px){
+      .blmlss-foot{padding:56px 20px 32px!important;}
+      .blmlss-foot [style*="grid-template-columns"]{grid-template-columns:minmax(0,1fr)!important;gap:40px!important;}
+      .blmlss-foot div,.blmlss-foot p{width:auto!important;height:auto!important;max-width:100%!important;}
+      .blmlss-foot a{min-height:44px;display:flex;align-items:center;}
+    }
   </style>
 </helmet>
 
