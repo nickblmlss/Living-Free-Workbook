@@ -47,3 +47,16 @@ Live URLs will be:
 ## If something still 404s
 
 Open the live site, then DevTools → Network, and reload. Any red row tells you the exact path that is missing — compare it character for character (including case) against the file in the repo.
+
+
+## Clean URLs
+
+The live site serves these files:
+
+- `index.html` — prayerprocess.blmlss.com/
+- `living-free.html` — /living-free.html
+- `reset.html`, `giving.html`
+
+Each is a straight copy of its `.dc.html` source. Edit the `.dc.html` file, then ask for a fresh copy before uploading — the copies do not update themselves.
+
+Also keep an empty `.nojekyll` at the repo root so `_ds/` is served.
