@@ -45,7 +45,25 @@
       main[style*="padding"]{padding-left:16px!important;padding-right:16px!important;}
       article[style*="padding: 40px"],article[style*="padding:40px"]{padding:20px!important;}
     }
-  </style>
+  
+    /* edge guard: nothing extends past the right screen edge */
+    *,*::before,*::after{box-sizing:border-box;}
+    html,body{max-width:100%;overflow-x:hidden;}
+    h1,h2,h3,h4,p,li,blockquote,span,a,label,td{overflow-wrap:break-word;}
+    [style*="grid-template-columns"],[style*="display:flex"],[style*="display: flex"]{min-width:0;}
+
+    /* wordmark: ~45% smaller and centered on phones + iPad */
+    @media (max-width:1024px){
+      header a[href] > img[alt="BLMLSS"],
+      header button > img[alt="BLMLSS"],
+      [data-r="bar"] img[alt="BLMLSS"],
+      img[alt="BLMLSS"]{height:clamp(20px,3.4vw,26px)!important;margin:0!important;}
+      [data-r="bar"] > div:first-child,
+      header > div > div:first-child{flex-direction:row!important;align-items:center!important;gap:clamp(14px,3vw,28px)!important;}
+      [data-r="bar"] nav,
+      header nav{justify-content:flex-start!important;flex-wrap:wrap!important;}
+    }
+</style>
 </helmet>
 
 <section style="font-family: var(--font-body),'Source Sans 3',system-ui,sans-serif; color: #1E1B16; width: 100%; max-width: 64ch">
@@ -86,7 +104,7 @@ class Component extends DCLogic {
     return {
       eyebrow: this.props.eyebrow ?? 'Starting over',
       heading: this.props.heading ?? 'Reset your answers',
-      description: this.props.description ?? 'Resetting clears every step you have marked complete, your reading progress and everything you have written on this device.',
+      description: this.props.description ?? 'Resetting clears every step you have marked complete, your reading progress and everything you have written on this device. Clearing browser data will also delete progress!',
       buttonLabel: this.props.buttonLabel ?? 'Reset your answers',
       confirmHeading: this.props.confirmHeading ?? 'Are you sure?',
       confirmLabel: this.props.confirmLabel ?? 'Reset everything',
