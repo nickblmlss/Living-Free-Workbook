@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/tokens/effects.css">
   <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/tokens/base.css">
   <link rel="stylesheet" href="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/styles.css">
+  <link rel="stylesheet" href="responsive.css">
   <script src="_ds/blameless-ministries-design-system-0fb65eda-218a-45e4-9df5-6170da0512bf/_ds_bundle.js"></script>
   <script src="living-free-content.js"></script>
   <script src="reveal.js"></script>
@@ -93,14 +94,13 @@
   </div>
 </sc-if>
 <div style="{{ gateStyle }}">
-<div style="min-height: 100vh; background: var(--cream); color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.65;">
+<div style="min-height: 100vh; background: #FFFFFF; color: var(--ink); font-family: var(--font-body); font-size: 17px; line-height: 1.65;">
 
-  <header data-noprint="true" style="position: static; background: var(--cream); border-bottom: 1px solid var(--ink-15);">
-    <div data-r="bar" style="max-width: 1240px; margin: 0 auto; padding: 14px 32px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+  <dc-import name="SiteHeader" hint-size="100%,68px"></dc-import>
+
+  <header data-noprint="true" style="position: static; background: #FFFFFF; border-bottom: 1px solid var(--ink-15);">
+    <div data-r="bar" style="max-width: 1240px; margin: 0 auto; padding: 12px 32px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
       <div style="display: flex; align-items: center; gap: 28px; min-width: 0;">
-        <button onClick="{{ goHome }}" style="appearance: none; border: 0; background: none; padding: 0; cursor: pointer; display: block; flex: none;">
-          <img src="assets/logo-blmlss-ink.png" alt="BLMLSS" style="height: 26px; width: auto; display: block;">
-        </button>
         <nav style="display: flex; align-items: center; gap: 20px;">
           <a href="BLMLSS%20Prayer%20Process.dc.html" style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(30,27,22,.45); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 3px;">Prayer Process</a>
           <span style="color: rgba(30,27,22,.25);">|</span>
@@ -144,17 +144,23 @@
   <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
     <main>
       
-      <section style="max-width: 1240px; margin: 0 auto; padding: clamp(56px, 9vw, 128px) 24px clamp(40px, 6vw, 80px); display: grid; gap: 40px; grid-template-columns: minmax(0, 1fr);">
-        <div style="max-width: 20ch;">
-          <div style="font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-45); margin-bottom: 24px;">Blameless Ministries</div>
-          <h1 style="font-family: var(--font-display); font-weight: 400; font-size: clamp(52px, 9vw, 96px); line-height: 1.08; letter-spacing: 0.01em; text-transform: uppercase; margin: 0; width: 780px; height: 202px">LIVING FREE WORKBOOK</h1>
+      <section style="position: relative; height: 100vh; min-height: 700px; overflow: hidden; background: var(--ink);">
+        <img src="assets/photo-open-hands-web.jpg" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%;">
+        <div style="position: relative; height: 100%; max-width: 1240px; margin: 0 auto; padding: 32px; display: flex; flex-direction: column; justify-content: flex-end;">
+          <div style="display: flex; flex-direction: column; gap: 4px; padding-bottom: 40px;">
+            <span style="padding-left: 4px; font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: #F7F3ED;">Blameless Ministries</span>
+            <h1 style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: clamp(64px, 17vw, 280px); line-height: 0.86; letter-spacing: -0.02em; color: #F7F3ED; white-space: nowrap;">Living Free</h1>
+          </div>
         </div>
+      </section>
+
+      <section data-reveal="" style="max-width: 1240px; margin: 0 auto; padding: 120px 32px 96px;">
         <div style="max-width: 62ch; display: grid; gap: 20px;">
-          <p style="font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 28px); line-height: 1.35; margin: 0;">A 30 day workbook for maintaining your deliverance.</p>
+          <p style="margin: 0; font-family: var(--font-display); font-weight: 400; font-size: 52px; line-height: 1.16; letter-spacing: -0.01em; text-wrap: pretty;">A 30 day workbook for maintaining your deliverance.</p>
           <p style="margin: 0; color: var(--ink-70);">This is a free resource for those who have gone through prayer with Blameless Ministries. Work through it one day at a time. Everything you write is saved in your browser, so you can close it and come back (don't reset your browser).&nbsp;</p>
           <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
-            <button onClick="{{ resume }}" style="appearance: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 28px; border: 1px solid var(--ink); border-radius: 4px; background: var(--ink); color: var(--cream);" style-hover="background: var(--action-primary-hover);">{{ ctaLabel }}</button>
-            <button onClick="{{ goPlan }}" style="appearance: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 28px; border: 1px solid var(--ink-15); border-radius: 4px; background: transparent; color: var(--ink);" style-hover="background: var(--sand);">Your Battle Plan</button>
+            <button onClick="{{ resume }}" style="appearance: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 28px; border: 1px solid var(--ink); border-radius: 4px; background: var(--ink); color: var(--cream);" style-hover="background: #332E26;">{{ ctaLabel }}</button>
+            <button onClick="{{ goPlan }}" style="appearance: none; cursor: pointer; font-family: var(--font-body); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; padding: 15px 28px; border: 1px solid var(--ink-15); border-radius: 4px; background: transparent; color: var(--ink);" style-hover="background: var(--cream);">Your Battle Plan</button>
           </div>
         </div>
       </section><section style="background: var(--surface-scripture);">
@@ -368,7 +374,7 @@
     </div>
   </footer>
 
-  <dc-import name="Site Footer" hint-size="100%,520px"></dc-import>
+  <dc-import name="SiteFooter" hint-size="100%,560px"></dc-import>
 </div>
 </div>
 
